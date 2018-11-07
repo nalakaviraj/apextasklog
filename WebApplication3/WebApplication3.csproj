@@ -128,6 +128,7 @@
     <Content Include="Task.css" />
     <Content Include="userview.aspx" />
     <Content Include="viewreports.aspx" />
+    <Content Include="viewsinglemember.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -203,6 +204,13 @@
     </Compile>
     <Compile Include="viewreports.aspx.designer.cs">
       <DependentUpon>viewreports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="viewsinglemember.aspx.cs">
+      <DependentUpon>viewsinglemember.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="viewsinglemember.aspx.designer.cs">
+      <DependentUpon>viewsinglemember.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
