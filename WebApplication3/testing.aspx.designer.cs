@@ -31,13 +31,22 @@ namespace WebApplication3 {
         protected global::System.Web.UI.WebControls.TextBox Member_name_textbox;
         
         /// <summary>
-        /// datetimepicker1 control.
+        /// datepicker control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox datetimepicker1;
+        protected global::System.Web.UI.WebControls.TextBox datepicker;
+        
+        /// <summary>
+        /// RequiredFieldValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
         
         /// <summary>
         /// Reference_no control.
@@ -58,13 +67,13 @@ namespace WebApplication3 {
         protected global::System.Web.UI.WebControls.GridView Gridview1;
         
         /// <summary>
-        /// Button1 control.
+        /// add_new_row control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button add_new_row;
         
         /// <summary>
         /// submit control.

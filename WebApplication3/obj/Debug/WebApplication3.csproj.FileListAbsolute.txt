@@ -49,8 +49,8 @@ C:\Users\titot\source\repos\WebApplication3\WebApplication3\bin\roslyn\VBCSCompi
 C:\Users\titot\source\repos\WebApplication3\WebApplication3\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\titot\source\repos\WebApplication3\WebApplication3\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\titot\source\repos\WebApplication3\WebApplication3\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\titot\source\repos\WebApplication3\WebApplication3\obj\Debug\WebApplication3.csprojAssemblyReference.cache
 C:\Users\titot\source\repos\WebApplication3\WebApplication3\obj\Debug\WebApplication3.csproj.CoreCompileInputs.cache
 C:\Users\titot\source\repos\WebApplication3\WebApplication3\obj\Debug\WebApplication3.csproj.CopyComplete
 C:\Users\titot\source\repos\WebApplication3\WebApplication3\obj\Debug\WebApplication3.dll
 C:\Users\titot\source\repos\WebApplication3\WebApplication3\obj\Debug\WebApplication3.pdb
+C:\Users\titot\source\repos\WebApplication3\WebApplication3\obj\Debug\WebApplication3.csprojAssemblyReference.cache

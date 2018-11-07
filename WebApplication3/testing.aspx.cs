@@ -27,6 +27,12 @@ namespace WebApplication3
 
             }
 
+            Member_name_textbox.Text= Session["member_name"].ToString();
+            string mymember_name = Member_name_textbox.Text;
+
+            commonclass ref_no = new commonclass();
+            Reference_no.Text = ref_no.generate_referenceno(mymember_name);
+
 
         }
 
@@ -256,7 +262,7 @@ namespace WebApplication3
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void add_new_row_Click(object sender, EventArgs e)
         {
             AddNewRowToGrid();
         }
@@ -279,7 +285,7 @@ namespace WebApplication3
                 
             }
             this.save_report();
-
+            Response.Redirect("userview.aspx");
         }
 
         private void SaveDetails(GridViewRow row)
@@ -287,24 +293,29 @@ namespace WebApplication3
 
             try
             {
-                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Apex"].ConnectionString);
+                using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Apex"].ConnectionString))
+                {
 
-                SqlCommand cmd = new SqlCommand("INSERT INTO Tasks ( reference_no,serial_no, task_name, task_description, time)" + "VALUES(@Reference_no,@TextBox8, @task_name, @task_description ,@time)", con);
-                cmd.Parameters.AddWithValue("@Reference_no", Reference_no.Text);
-                //cmd.Parameters.AddWithValue("@Textbox8",(Gridview1.Rows[row.RowIndex].Cells[1]).Text);
-                cmd.Parameters.AddWithValue("@TextBox8", row.Cells[0].Text);
-                cmd.Parameters.AddWithValue("@task_name", ((TextBox)Gridview1.Rows[row.RowIndex].FindControl("TextBox1")).Text);
-                cmd.Parameters.AddWithValue("@task_description", ((TextBox)Gridview1.Rows[row.RowIndex].FindControl("TextBox2")).Text);
-                cmd.Parameters.AddWithValue("@time", Convert.ToInt16(((TextBox)Gridview1.Rows[row.RowIndex].FindControl("TextBox3")).Text.ToString()));
- 
-                con.Open();
-                //cmd.Connection = con;
-                cmd.ExecuteNonQuery();
-                con.Close();
 
-                                
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Tasks ( reference_no,serial_no, task_name, task_description, time)" + "VALUES(@Reference_no,@TextBox8, @task_name, @task_description ,@time)", con);
+                    cmd.Parameters.AddWithValue("@Reference_no", Reference_no.Text);
+                    //cmd.Parameters.AddWithValue("@Textbox8",(Gridview1.Rows[row.RowIndex].Cells[1]).Text);
+                    cmd.Parameters.AddWithValue("@TextBox8", row.Cells[0].Text);
+                    cmd.Parameters.AddWithValue("@task_name", ((TextBox)Gridview1.Rows[row.RowIndex].FindControl("TextBox1")).Text);
+                    cmd.Parameters.AddWithValue("@task_description", ((TextBox)Gridview1.Rows[row.RowIndex].FindControl("TextBox2")).Text);
+                    cmd.Parameters.AddWithValue("@time", Convert.ToInt16(((TextBox)Gridview1.Rows[row.RowIndex].FindControl("TextBox3")).Text.ToString()));
 
+                    con.Open();
+                    //cmd.Connection = con;
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    //Response.Redirect("userview.aspx");
+
+
+
+                }
             }
+
             catch (Exception ex)
             {
                 string myerr = ex.ToString();
@@ -321,10 +332,10 @@ namespace WebApplication3
             {
                 SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Apex"].ConnectionString);
 
-                SqlCommand cmd = new SqlCommand("INSERT INTO Assign ( reference_no, member_id, date_assigned)" + "VALUES(@Reference_no,@Member_name_textbox,@datetimepicker1)", con);
+                SqlCommand cmd = new SqlCommand("INSERT INTO Assign ( reference_no, member_name, date_assigned)" + "VALUES(@Reference_no,@Member_name_textbox,@datetpicker)", con);
                 cmd.Parameters.AddWithValue("@Reference_no", Reference_no.Text);
                 cmd.Parameters.AddWithValue("@Member_name_textbox", Member_name_textbox.Text);
-                cmd.Parameters.AddWithValue("@datetimepicker1", datetimepicker1.Text);
+                cmd.Parameters.AddWithValue("@datetpicker", datepicker.Text);
 
                 con.Open();
                 cmd.ExecuteNonQuery();
@@ -346,6 +357,15 @@ namespace WebApplication3
             Save();
 
         }
+
+        protected void datepicker_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
 
 
     }
